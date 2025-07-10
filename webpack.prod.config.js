@@ -6,6 +6,7 @@ const path = require('path');
         output: {
             path: path.resolve(__dirname, 'dist'),
             // filename: 'bundle.js',
+            publicPath: '/Portfolio/',
             filename: 'bundle.[contenthash].js',
             clean: true,
         },
