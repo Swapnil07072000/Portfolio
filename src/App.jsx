@@ -11,7 +11,9 @@ import Copyright from './pages/CopyRight';
 import NotFound from './pages/NotFound';
 import ExperienceTimeline from './pages/ExperienceTimeline';
 import EducationTimeline from './pages/EducationTimeline';
+import Skills from './pages/Skills';
 import './index.css';
+
 
 function App() {
   return (
@@ -28,6 +30,7 @@ function App() {
             <Route path="/project" element={<Projects />} />
             <Route path="/experience" element={<ExperienceTimeline />} />
             <Route path="/education" element={<EducationTimeline />} />
+            <Route path="/skills" element={<Skills />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

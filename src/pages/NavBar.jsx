@@ -17,6 +17,9 @@ function Navbar() {
           <Link to="/about" className="text-gray-700 hover:text-blue-600">
             About
           </Link>
+          <Link to="/skills" className="text-gray-700 hover:text-blue-600">
+            Skills
+          </Link>
           <Link to="/project" className="text-gray-700 hover:text-blue-600">
             Projects
           </Link>
@@ -76,6 +79,13 @@ function Navbar() {
             className="block text-gray-700 hover:text-blue-600"
           >
             About
+          </Link>
+          <Link
+            to="/skills"
+            onClick={() => setIsOpen(false)}
+            className="block text-gray-700 hover:text-blue-600"
+          >
+            Skills
           </Link>
           <Link
             to="/project"
