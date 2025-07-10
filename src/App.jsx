@@ -16,7 +16,7 @@ import './index.css';
 function App() {
   return (
     <div className="flex flex-col min-h-screen relative overflow-hidden">
-      <BrowserRouter>
+      <BrowserRouter basename="/Portfolio">
         <DayNightCycle />
         <Navbar />
         <DayTime />
