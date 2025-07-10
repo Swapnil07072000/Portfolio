@@ -1,7 +1,7 @@
 import React from 'react';
 import project1Img from '../assets/images/Project1.jpg';
 import project2Img from '../assets/images/Project2.jpg';
-
+import project3Img from '../assets/images/Project3.png';
 
 const projects = [
   {
@@ -24,7 +24,7 @@ const projects = [
     title: "Handwritten Text Prediction (Working)",
     description: "Any written text on paper cursive included are predicted with system.",
     tech: ["tensorflow", "pandas", "image processing", "python"],
-    image: "",
+    image: project3Img,
     liveLink: "",
     github: "",
   }
@@ -34,7 +34,7 @@ function Projects() {
   return (
     <section className="py-12 bg-transparent text-white min-h-screen">
       <h2 className="text-3xl font-bold text-center mb-8">My Projects</h2>
-      <div className="max-w-6xl mx-auto grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 px-4">
+     <div className="max-w-6xl mx-auto grid gap-8 px-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         {projects.map(({ title, description, tech, image, liveLink, github }, idx) => (
           <div
             key={idx}

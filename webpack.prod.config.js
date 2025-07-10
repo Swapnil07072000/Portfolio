@@ -5,18 +5,15 @@ const path = require('path');
         entry: './src/index.js',
         output: {
             path: path.resolve(__dirname, 'dist'),
-            filename: 'bundle.js',
+            // filename: 'bundle.js',
+            filename: 'bundle.[contenthash].js',
             clean: true,
         },
-        mode: 'development',
-        devServer: {
-            host: '0.0.0.0',
-            static: './dist',
-            port: 9000,
-            open: true,
-            hot: true,
-            historyApiFallback: true,
-            allowedHosts: 'all'
+        mode: 'production',
+         performance: {
+            hints: false,
+            maxEntrypointSize: 512000,
+            maxAssetSize: 512000
         },
         module: {
             rules: [
