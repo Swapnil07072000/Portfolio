@@ -10,28 +10,39 @@ const DayNightCycleBackground = () => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
 
-    const resize = () => {
-      const dpr = window.devicePixelRatio || 1;
-      const width = window.innerWidth;
-      const height = window.innerHeight;
+   const resize = () => {
+    const dpr = window.devicePixelRatio || 1;
+    const width = window.innerWidth;
 
-      canvas.width = width * dpr;
-      canvas.height = height * dpr;
-      canvas.style.width = `${width}px`;
-      canvas.style.height = `${height}px`;
+    const visualHeight = window.innerHeight; // << use for orbit calculations
+    const totalHeight = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.offsetHeight,
+      document.documentElement.clientHeight
+    );
 
-      ctx.setTransform(1, 0, 0, 1, 0, 0);
-      ctx.scale(dpr, dpr);
+    canvas.width = width * dpr;
+    canvas.height = totalHeight * dpr;
+    canvas.style.width = `${width}px`;
+    canvas.style.height = `${totalHeight}px`;
 
-      const padding = 60;
-      const maxRadiusX = (width / 2) - padding;
-      const maxRadiusY = height * 0.5;
-      const radius = Math.min(maxRadiusX, maxRadiusY);
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.scale(dpr, dpr);
 
-      centerRef.current.centerX = width / 2;
-      centerRef.current.centerY = height * 0.7;
-      centerRef.current.radius = radius;
-    };
+    // Use visualHeight for positioning the sun/moon
+    const padding = 60;
+    const maxRadiusX = (width / 2) - padding;
+    const maxRadiusY = visualHeight * 0.5;
+    const radius = Math.min(maxRadiusX, maxRadiusY);
+
+    centerRef.current.centerX = width / 2;
+    centerRef.current.centerY = visualHeight * 0.7; // Orbit stays in viewport
+    centerRef.current.radius = radius;
+
+  };
+
 
     resize();
     window.addEventListener('resize', resize);
