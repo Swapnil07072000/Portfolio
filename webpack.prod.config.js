@@ -8,6 +8,7 @@ const path = require('path');
             // filename: 'bundle.js',
             filename: 'bundle.[contenthash].js',
             clean: true,
+            publicPath: '/Portfolio/',
         },
         mode: 'production',
          performance: {
