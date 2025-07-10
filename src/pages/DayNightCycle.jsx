@@ -117,8 +117,8 @@ const DayNightCycleBackground = () => {
       const width = canvas.width / (window.devicePixelRatio || 1);
       const height = canvas.height / (window.devicePixelRatio || 1);
       ctx.clearRect(0, 0, width, height);
-      const now = new Date("2025-07-07 02:00:00");
-      // const now = new Date();
+      // const now = new Date("2025-07-07 02:00:00");
+      const now = new Date();
       const hours = now.getHours();
       const minutes = now.getMinutes();
       const seconds = now.getSeconds();
